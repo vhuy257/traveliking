@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import '_simple-line-icons';
+
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.logo {
+  .logo-text {
+    font-size: 34px;
+    color: #e22b2b;
+    margin-bottom: 10px;
+  }
+  h4 {
+    margin-top: 10px;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.banner {
+  width: 728px;
+  height: 85px;
+  text-align: center;
+  line-height: 85px;
+  color: #fff;
+  background: #e22b2b;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.navigation {
+  background: #000;
+  border-top: 4px solid #e22b2b;
+  ul {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    li {
+      margin-right: 2px;
+      a {
+        padding: 10px 15px;
+        display: block;
+        color: #fff;
+      }
+      &.actived,
+      &:hover {
+        background: #e22b2b;
+      }
+   }
+  }
+}
+
+.post-random {
+  margin-top:  40px;
+}
+
+.layout-2column-left {
+  display: flex;
+  margin-top: 40px;
+}
+
+.left-column {
+  width: 800px;
+  margin-right: 10px;
+}
+
+.right-column {
+  width: calc(100% - 810px);
+}
+
+.slider-wrapper--main {
+  width: 630px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+  height: 350px;
+  position: relative;
+  .slick-arrow.slick-prev,
+  .slick-arrow.slick-next {
+    width: 40px;
+    height: 40px;
+    background: #ff0303bd;
+  }
+  .slick-arrow.slick-next {
+    bottom: 0;
+    right: 40px;
+    top: auto;
+    
+  }
+  .slick-arrow.slick-prev {
+    bottom: 0;
+    left: auto;
+    right: 85px;
+    top: auto;
+    z-index: 9;
+  }
+  .item {
+    background: orange;
+    height: 350px;
+    position: relative;
+    .wrapper-title {
+      .title-post {
+        position: absolute;
+        color: #fff;
+        bottom: 40px;
+        padding: 0 20px;
+        &.datetime {
+          bottom: 30px;
+          font-size: 14px;
+        }
+        &.tags-category {
+          bottom: 120px;
+          left: 20px;
+          border-radius: 3px;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+.tags-category {
+  font-size: 14px;
+  color: #fff;
+  background: red;
+}
+
+.title-category {
+  position: relative;
+  > span {
+    color: #fff;
+    background: #289dcc;
+    padding: 6px 12px;
+    position: relative;
+  }
+  .view-all {
+    position: absolute;
+    right: 0;
+    background: #000;
+    color: #fff;
+    padding: 6px 12px;
+    border: 0;
+    outline: 0;    
+  }
+  &:after {
+    content : '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #289dcc;
+    height: 2px;
+    bottom: -8px;
+  }
+}
+
+.post-grid--layout {
+  display: inline-block;
+  width: calc(100% - 640px);
+  height: 350px;
+  .layout-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    figure {
+      position: relative;
+      background: blue;
+      padding: 0;
+      margin: 0;
+      height: 170px;
+      overflow: hidden;
+      .title-post-detail {
+        position: absolute;
+        bottom: 10px;
+        color: #fff;
+        .title-post {
+          font-size: 14px;
+          padding: 0 10px;
+          margin-bottom: 0;
+          &.datetime {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'simple-line-icons';
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-next:before {
+  content: "\e606"
+}
+
+.slick-prev:before {
+  content: "\e605"
+}
+
+.footer-wrapper {
+  background: #303440;
+  color: #fff;
+  padding: 40px 0;
+  margin: 20px auto 0;
+}
