@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Default from '../layouts/default';
 import TwoColumn from '../layouts/two-columns';
+import TickerLayout from '../layouts/ticker';
 
 class SectionLeftCategory extends Component {
     constructor(props) {
@@ -47,14 +48,28 @@ class SectionLeftCategory extends Component {
                 return (
                     <TwoColumn 
                     data={this.state.data} 
-                    sectionTitle="Miền Trung" 
+                    sectionTitle={this.props.sectionTitle}
                     layoutClass={this.props.layout}/>
                 );
+            case 'grid':
+                return (
+                    <Default 
+                    data={this.state.data} 
+                    sectionTitle={this.props.sectionTitle}
+                    layoutClass={this.props.layout}/>
+                );
+            case 'ticker':
+                return (
+                    <TickerLayout
+                    data={this.state.data} 
+                    sectionTitle={this.props.sectionTitle}
+                    layoutClass={this.props.layout}/>
+                )
             default:
                 return (
                     <Default 
                     data={this.state.data} 
-                    sectionTitle="Miền Bắc"/>
+                    sectionTitle={this.props.sectionTitle}/>
                 );
         }
     }

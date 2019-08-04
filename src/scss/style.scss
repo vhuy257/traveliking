@@ -16,7 +16,7 @@ ul, li{
 
 .list-item {
   .item-post--detail {
-    padding: 10px 5px;
+    padding: 10px;
   }
   .item-post {
     margin: 20px 0 0;
@@ -173,9 +173,13 @@ a {
   }
   .list-item .item-post {
     box-shadow: none;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+    margin-top: 10px;
     width: 100%;
     flex-wrap: nowrap;
+    .item-post--detail {
+      padding: 0 0 0 10px;
+    }
     img {
       width: 130px;
     }
@@ -183,6 +187,46 @@ a {
       font-size: 14px;
       font-weight: normal;
     }
+  }
+}
+
+.list-item.ticker ul{
+  flex-wrap: nowrap;
+  .item-post {
+    margin: 0 20px;
+    width: 200px;
+    .datetime,
+    .description,
+    .tags-category {
+      display: none;
+    }
+    h3 {
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
+}
+
+.header-category {
+  margin-bottom: 40px;
+}
+
+.list-item.grid .item-post {
+  width: calc(100%/2 - 10px);
+  position: relative;
+  .datetime,
+  .description,
+  .tags-category,
+  &:nth-child(4n+1) {
+    display: none;
+  }
+  .item-post--detail {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+  }
+  h3 {
+    font-size: 18px;
   }
 }
 
@@ -271,7 +315,7 @@ a {
     background: #289dcc;
     padding: 6px 12px;
     position: relative;
-    bottom: -2px;
+    bottom: 8px;
   }
   .view-all {
     position: absolute;
@@ -282,7 +326,7 @@ a {
     border: 0;
     width: 100px;
     outline: 0;    
-    bottom: -5px;
+    bottom: 5px;
     cursor: pointer;
   }
   &:after {
@@ -292,7 +336,7 @@ a {
     right: 0;
     background: #289dcc;
     height: 2px;
-    bottom: -10px;
+    bottom: 0;
   }
 }
 

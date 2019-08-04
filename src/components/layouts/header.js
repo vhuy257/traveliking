@@ -42,6 +42,8 @@ class Header extends Component {
                 <ul>
                 <li className="actived"><Link to="/">Home</Link></li>
                 <li><Link to="/">Miền Bắc</Link></li>
+                <li><Link to="/">Miền Trung</Link></li>
+                <li><Link to="/">Miền Nam</Link></li>
                 </ul>
             </div>
             </section>

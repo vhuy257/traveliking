@@ -8,8 +8,10 @@ class LayoutLeftToRight extends Component {
         return (
             <section className="rows layout-2column-left container">
                 <div className="left-column">
-                    <SectionLeftCategory/>
-                    <SectionLeftCategory layout="two-columns"/>
+                    <SectionLeftCategory sectionTitle="Miền Nam"/>
+                    <SectionLeftCategory sectionTitle="Miền Bắc"   layout="two-columns"/>
+                    <SectionLeftCategory sectionTitle="Miền Trung" layout="grid"/>
+                    <SectionLeftCategory sectionTitle="Châu Á" layout="ticker"/>
                 </div>
                 <div className="right-column">
                     <BannerQC src="https://billbalo.com/wp-content/uploads/2017/07/Button-message.png"/>
