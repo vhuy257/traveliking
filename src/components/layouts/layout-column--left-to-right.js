@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SectionLeftCategory from '../index/section-category';
 import BannerQC from '../index/banner-qc';
+import ReviewAll from '../index/review-all';
 
 class LayoutLeftToRight extends Component {
     render() {
@@ -8,9 +9,13 @@ class LayoutLeftToRight extends Component {
             <section className="rows layout-2column-left container">
                 <div className="left-column">
                     <SectionLeftCategory/>
+                    <SectionLeftCategory layout="two-columns"/>
                 </div>
                 <div className="right-column">
-                    <BannerQC/>
+                    <BannerQC src="https://billbalo.com/wp-content/uploads/2017/07/Button-message.png"/>
+                    <ReviewAll/>
+                    <BannerQC src="https://billbalo.com/wp-content/uploads/2019/04/BANNER-QC_SANVE99K_600x500.jpg"/>
+                    <BannerQC src="https://s.adroll.com/a/4HE/URC/4HEURCJCCZGLLCQ27HHHPZ.jpg"/>
                 </div>
             </section>
         )
