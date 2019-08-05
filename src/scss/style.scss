@@ -5,7 +5,7 @@ body {
   font-family: 'Nunito', sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
 }
 
@@ -276,7 +276,7 @@ a {
     z-index: 9;
   }
   .item {
-    background: orange;
+    background: #fff;
     height: 350px;
     position: relative;
     .wrapper-title {
@@ -290,7 +290,7 @@ a {
           font-size: 14px;
         }
         &.tags-category {
-          bottom: 120px;
+          bottom: 80px;
           left: 20px;
           border-radius: 3px;
           padding: 0 5px;
@@ -374,7 +374,6 @@ a {
 
 .slick-prev:before, .slick-next:before {
   font-family: 'simple-line-icons';
-  speak: none;
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
