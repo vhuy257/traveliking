@@ -11,7 +11,7 @@ class TickerLayout extends Component {
                         View all
                     </button>
                 </div>
-                <Ticker>
+                <Ticker mode="smooth" offset="0">
                     {() => (
                         <div className={`list-item ${this.props.layoutClass || 'default'}`}>
                             <ul className="d-flex">

@@ -5,7 +5,7 @@ class ReviewAll extends Component {
         return (
             <div className="header-category review-all">
                     <div className="title-category">
-                        <span>Review all</span>
+                        <span>{this.props.title}</span>
                         <button className="view-all">
                             View all
                         </button>

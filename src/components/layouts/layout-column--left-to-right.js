@@ -15,9 +15,10 @@ class LayoutLeftToRight extends Component {
                 </div>
                 <div className="right-column">
                     <BannerQC src="https://billbalo.com/wp-content/uploads/2017/07/Button-message.png"/>
-                    <ReviewAll/>
+                    <ReviewAll title="Review"/>
                     <BannerQC src="https://billbalo.com/wp-content/uploads/2019/04/BANNER-QC_SANVE99K_600x500.jpg"/>
                     <BannerQC src="https://s.adroll.com/a/4HE/URC/4HEURCJCCZGLLCQ27HHHPZ.jpg"/>
+                    <ReviewAll layout="am-thuc" title="Ẩm Thực"/>
                 </div>
             </section>
         )
