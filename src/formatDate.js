@@ -1,6 +1,6 @@
 export const formatDate = (date) => {
   let _date = new Date(date);
-  var month = new Array();
+  var month = [];
   month[0] = "January";
   month[1] = "February";
   month[2] = "March";

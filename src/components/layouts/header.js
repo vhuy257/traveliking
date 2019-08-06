@@ -29,7 +29,7 @@ class Header extends Component {
             <header>
             <div className="container d-flex">
                 <div className="logo">
-                <h2 className="logo-text">TraveliKing</h2>
+                <h2 className="logo-text"><Link to="/">TraveliKing</Link></h2>
                 <h4>Du lịch , Trải nghiệm,  Khám phá</h4>
                 </div>
                 <div className="banner">
