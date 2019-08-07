@@ -26,7 +26,7 @@ class PostDetail extends Component {
                 <div className="left-column">
                     <img src={this.props.topic.topicImage} alt={this.props.topic.titleTopic} />
                     <h2>{this.props.topic.titleTopic}</h2>
-                    <div dangerouslySetInnerHTML={{__html: draftToHtml(convertToRaw(this.props.topic.contentTopic.getCurrentContent()))}}></div>
+                    <div className="content--post" dangerouslySetInnerHTML={{__html: draftToHtml(convertToRaw(this.props.topic.contentTopic.getCurrentContent()))}}></div>
                 </div>
                 <div className="right-column">
                     <BannerQC src="https://billbalo.com/wp-content/uploads/2017/07/Button-message.png"/>
