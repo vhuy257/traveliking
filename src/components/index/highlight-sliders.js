@@ -75,8 +75,12 @@ class HightLight extends Component {
                           <img src={item.image} alt=""/>
                           <div className="content-post--wrapper">
                             {
-                              item.category &&
-                              <span className="title-post tags-category">{item.category}</span>  
+                              item.tags &&
+                              item.tags.map((item, key) => (
+                                <span className="title-post tags-category" key={key}>
+                                    {item.name}
+                                </span>  
+                              ))
                             }
                             <h3 className="title-post">{item.title}</h3>
                             <span className="title-post datetime"><i className="icon-calendar"></i> <span>{formatDate(item.createdAt)}</span></span>

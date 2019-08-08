@@ -301,6 +301,7 @@ a {
         &.tags-category {
           border-radius: 3px;
           padding: 0 5px;
+          margin-right: 3px;
         }
       }
     }
@@ -354,6 +355,7 @@ a {
   span,
   strong {
     font-family: 'Nunito', sans-serif !important;
+    font-size: 16px !important;
   }
 }
 
@@ -388,9 +390,6 @@ a {
           &.datetime {
             font-size: 12px;
           }
-        }
-        h4.title-post {
-          height: 39px;
         }
       }
       img {

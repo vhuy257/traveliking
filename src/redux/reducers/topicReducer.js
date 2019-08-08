@@ -15,7 +15,8 @@ import {
   FETCH_TAG_CURRENT,
   FILTER_TOPIC_BY_TAGS,
   SET_IMAGE_TOPIC,
-  TOGGLE_LIST
+  TOGGLE_LIST,
+  RESET_CONTENT,
 } from '../actions/topicActions';
 
 const initialState = {
@@ -50,6 +51,13 @@ export default function TopicReducer (
   action
 ) {
   switch (action.type) {
+    case RESET_CONTENT: 
+      return {
+        ...state,
+        topicImage: '',
+        titleTopic: '',
+        contentTopic: EditorState.createEmpty() 
+      };
     case GET_LIST_TOPIC_SUCCESS:
       return {
         ...state,

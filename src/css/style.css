@@ -1059,6 +1059,7 @@ a {
 .slider-wrapper--main .item .wrapper-title .title-post.tags-category {
   border-radius: 3px;
   padding: 0 5px;
+  margin-right: 3px;
 }
 
 .tags-category {
@@ -1107,6 +1108,7 @@ a {
 .content--post span,
 .content--post strong {
   font-family: "Nunito", sans-serif !important;
+  font-size: 16px !important;
 }
 
 .post-grid--layout {
@@ -1144,9 +1146,6 @@ a {
 }
 .post-grid--layout .layout-wrapper figure .title-post-detail .title-post.datetime {
   font-size: 12px;
-}
-.post-grid--layout .layout-wrapper figure .title-post-detail h4.title-post {
-  height: 39px;
 }
 .post-grid--layout .layout-wrapper figure img {
   height: 170px;

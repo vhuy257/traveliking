@@ -10,12 +10,14 @@ import {
 } from '../../redux/actions/apiActions';
 
 import {
+    resetContent,
     fetchTopicSuccess
 } from '../../redux/actions/topicActions';
 
 class PostDetail extends Component {
     componentDidMount() {
         const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.location.state._id}`;
+        this.props.dispatch(resetContent());
         this.props.dispatch(getData(urlFetch, fetchTopicSuccess));
     }
     
