@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {formatDate} from '../../formatDate';
 class ListDataLayoutDefault extends Component {
     render() {
         return (
@@ -17,10 +17,14 @@ class ListDataLayoutDefault extends Component {
                                 <li className="item-post" key={key}>
                                     <img src={item.image} alt=""/>
                                     <div className="item-post--detail">
-                                        <span className="tags-category">Nhật Bản</span>
+                                        {item.tags &&
+                                            item.tags.map((item, key) => (
+                                                <span className="tags-category" key={key}>{item.name}</span>
+                                            ))
+                                        }
                                         <div className="title">
                                             <h3>{item.title}</h3>
-                                            <span className="title-post datetime"><i className="icon-calendar"></i> <span>{item.time}</span></span>
+                                            <span className="title-post datetime"><i className="icon-calendar"></i> <span>{formatDate(item.createdAt)}</span></span>
                                             <div className="description">
                                                 {item.description}
                                             </div>

@@ -1,19 +1,9 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import Slider from "react-slick";
-import {connect} from 'react-redux';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import  ROUTES from '../../constants/routes';
 import {formatDate} from '../../formatDate';
-import {
-  getData
-} from '../../redux/actions/apiActions';
-
-import {
-  getListTopicSuccess
-} from '../../redux/actions/topicActions';
-
 var settings = {
     autoplay: true,
     autoplaySpeed: 3000,
@@ -24,20 +14,14 @@ var settings = {
     speed: 1000,
 };
 
-const apiURL = `${ROUTES.API_BASE_URL}api/post/listposts/20`;
-
 class HightLight extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        Arr4Item: []
-      }
-    }
-
-    componentDidMount() {
-      this.props.dispatch(getData(apiURL, getListTopicSuccess));
-    }
-
+      constructor(props) {
+        super(props);
+        this.state = {
+          Arr4Item: []
+        }
+    } 
+    
     componentWillReceiveProps(nextProps) {
       if (this.props.topic.listTopic !== nextProps.topic.listTopic) {
         var temptArr = [];
@@ -122,11 +106,4 @@ class HightLight extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-  itemPerPage: state.paging.itemPerPage,
-  pageCurrent: state.paging.pageCurrent,
-  topic: state.topic,
-  loading: state.api.isLoading,
-});
-
-export default connect(mapStateToProps)(HightLight);
+export default HightLight;
