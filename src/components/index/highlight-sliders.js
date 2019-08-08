@@ -38,11 +38,11 @@ class HightLight extends Component {
       this.props.dispatch(getData(apiURL, getListTopicSuccess));
     }
 
-    componentWillReceiveProps(nexProps) {
-      if (this.props.topic.listTopic !== nexProps.topic.listTopic) {
+    componentWillReceiveProps(nextProps) {
+      if (this.props.topic.listTopic !== nextProps.topic.listTopic) {
         var temptArr = [];
         for( var i = temptArr.length; i < 4 ; i++) {
-          var item = nexProps.topic.listTopic[Math.floor(Math.random()*nexProps.topic.listTopic.length)];
+          var item = nextProps.topic.listTopic[Math.floor(Math.random()*nextProps.topic.listTopic.length)];
           if(!temptArr.includes(item)) {
             temptArr.push(item);
           }
@@ -66,7 +66,7 @@ class HightLight extends Component {
                       <div className="wrapper-title">
                         <Link 
                           to={{
-                            pathname: `/post/${item._id}`,
+                            pathname: `/post/${item.slug}`,
                             state: {
                               _id: item._id
                             }
@@ -95,7 +95,7 @@ class HightLight extends Component {
                       <figure className="highlights-featured-image" key={key}>
                         <Link 
                           to={{
-                            pathname: `/post/${item._id}`,
+                            pathname: `/post/${item.slug}`,
                             state: {
                               _id: item._id
                             }

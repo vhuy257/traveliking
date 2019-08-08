@@ -15,12 +15,18 @@ import {
 
 class PostDetail extends Component {
     componentDidMount() {
-        const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.match.params.id}`;
+        const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.location.state._id}`;
         this.props.dispatch(getData(urlFetch, fetchTopicSuccess));
-        document.title = this.props.match.params.id;
+    }
+    
+    componentWillReceiveProps(nextProps) {
+        if (this.props.topic !== nextProps.topic) {
+            document.title = nextProps.topic.titleTopic;
+        }
     }
 
     render() {        
+        console.log(this.props);
         return (
             <section className="rows layout-2column-left container">
                 <div className="left-column">
