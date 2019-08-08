@@ -1101,6 +1101,14 @@ a {
   bottom: 0;
 }
 
+.content--post p,
+.content--post div,
+.content--post a,
+.content--post span,
+.content--post strong {
+  font-family: "Nunito", sans-serif !important;
+}
+
 .post-grid--layout {
   display: inline-block;
   width: calc(100% - 640px);
@@ -1113,7 +1121,6 @@ a {
 }
 .post-grid--layout .layout-wrapper figure {
   position: relative;
-  background: blue;
   padding: 0;
   margin: 0;
   height: 170px;
