@@ -30,7 +30,7 @@ class ListDataLayoutDefault extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                </li> 
+                                </li>
                             ))
                         }
                     </ul>

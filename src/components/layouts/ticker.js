@@ -3,8 +3,6 @@ import Ticker from 'react-ticker'
 import {formatDate} from '../../formatDate';
 class TickerLayout extends Component {
     render() {
-        console.log(this.props.data);
-        
         return (
             <div className="header-category">
                 <div className="title-category">

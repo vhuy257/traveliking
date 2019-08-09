@@ -10,7 +10,7 @@ class TwoColumns extends Component {
                         View all
                     </button>
                 </div>
-                <div className={`list-item ${this.props.layoutClass}`}>
+                <div className="list-item two-columns">
                     {
                         this.props.data &&
                         (
