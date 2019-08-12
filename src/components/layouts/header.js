@@ -40,10 +40,7 @@ class Header extends Component {
             <section className={this.state.scrollTop > 126 ? 'navigation fixed' : 'navigation'}>
             <div className="container">
                 <ul>
-                <li className="actived"><Link to="/">Home</Link></li>
-                <li><Link to="/">Miền Bắc</Link></li>
-                <li><Link to="/">Miền Trung</Link></li>
-                <li><Link to="/">Miền Nam</Link></li>
+                    <li className="actived"><Link to="/">Home</Link></li>
                 </ul>
             </div>
             </section>

@@ -5,20 +5,50 @@ import BannerQC from '../../components/index/banner-qc';
 import ReviewAll from '../../components/index/review-all';
 import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
+import axios from 'axios';
 import {
     getData
 } from '../../redux/actions/apiActions';
-
 import {
     resetContent,
     fetchTopicSuccess
 } from '../../redux/actions/topicActions';
 
+const apiURL = `${ROUTES.API_BASE_URL}api/post/tag/`
 class PostDetail extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            AmThuc: [],
+            Review: [],
+        }
+    }
+    getDataByTag(tagname) {
+        axios.get(`${apiURL}${tagname}`)
+            .then(data => {                
+                if(data) {
+                    switch (tagname) {
+                        case 'Review':
+                            return this.setState({
+                                Review: data.data.data
+                            });
+                        case 'Ẩm Thực':
+                            return this.setState({
+                                AmThuc: data.data.data
+                            });
+                        default:
+                            return;
+                    }
+                }
+            });
+    }
+
     componentDidMount() {
         const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.location.state._id}`;
         this.props.dispatch(resetContent());
         this.props.dispatch(getData(urlFetch, fetchTopicSuccess));
+        this.getDataByTag('Review');
+        this.getDataByTag('Ẩm Thực');
     }
     
     componentWillReceiveProps(nextProps) {
@@ -28,7 +58,6 @@ class PostDetail extends Component {
     }
 
     render() {        
-        console.log(this.props);
         return (
             <section className="rows layout-2column-left container">
                 <div className="left-column">
@@ -38,10 +67,10 @@ class PostDetail extends Component {
                 </div>
                 <div className="right-column">
                     <BannerQC src="https://billbalo.com/wp-content/uploads/2017/07/Button-message.png"/>
-                    <ReviewAll title="Review"/>
+                    <ReviewAll title="Review" data={this.state.Review}/>
                     <BannerQC src="https://billbalo.com/wp-content/uploads/2019/04/BANNER-QC_SANVE99K_600x500.jpg"/>
                     <BannerQC src="https://s.adroll.com/a/4HE/URC/4HEURCJCCZGLLCQ27HHHPZ.jpg"/>
-                    <ReviewAll layout="am-thuc" title="Ẩm Thực"/>
+                    <ReviewAll layout="am-thuc" title="Ẩm Thực" data={this.state.AmThuc}/>
                 </div>
             </section>
         )
