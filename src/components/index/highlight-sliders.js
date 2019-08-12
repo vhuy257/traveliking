@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {formatDate} from '../../formatDate';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 var settings = {
     autoplay: true,
     autoplaySpeed: 3000,
@@ -56,7 +58,10 @@ class HightLight extends Component {
                             }
                           }}                          
                         >
-                          <img src={item.image} alt=""/>
+                          <LazyLoadImage 
+                          effect="blur"
+                          src={item.image} 
+                          alt={item.name}/>
                           <div className="content-post--wrapper">
                             {
                               item.tags &&

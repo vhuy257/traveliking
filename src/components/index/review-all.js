@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-
+import {formatDate} from '../../formatDate';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 class ReviewAll extends Component {
     render() {
         return (
@@ -12,42 +14,21 @@ class ReviewAll extends Component {
                     </div>
                     <div className="list-item">
                         <ul>
-                            <li className="item-post d-flex">
-                                <img src="https://billbalo.com/wp-content/uploads/2017/07/gi%E1%BA%A5y-t%E1%BB%9D-xin-visa-nh%E1%BA%ADt-390x205.png" width="130" alt=""/>
-                                <div className="item-post--detail">
-                                    <div className="title">
-                                        <h3>Hướng dẫn chuẩn bị giấy tờ xin Visa Nhật Bản tự túc mới nhất</h3>
-                                        <span className="title-post datetime"><i className="icon-calendar"></i> <span>September 18, 2016</span></span>
+                            {this.props.data.map(((item, key) => (
+                                <li className="item-post d-flex" key={key}>
+                                    <LazyLoadImage 
+                                    effect="blur"
+                                    src={item.image} 
+                                    width="130" 
+                                    alt={item.title}/>
+                                    <div className="item-post--detail">
+                                        <div className="title">
+                                            <h3>{item.title}</h3>
+                                            <span className="title-post datetime"><i className="icon-calendar"></i> <span>{formatDate(item.createdAt)}</span></span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li className="item-post d-flex">
-                                <img src="https://billbalo.com/wp-content/uploads/2017/07/gi%E1%BA%A5y-t%E1%BB%9D-xin-visa-nh%E1%BA%ADt-390x205.png" width="130" alt=""/>
-                                <div className="item-post--detail">
-                                    <div className="title">
-                                        <h3>Hướng dẫn chuẩn bị giấy tờ xin Visa Nhật Bản tự túc mới nhất</h3>
-                                        <span className="title-post datetime"><i className="icon-calendar"></i> <span>September 18, 2016</span></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="item-post d-flex">
-                                <img src="https://billbalo.com/wp-content/uploads/2017/07/gi%E1%BA%A5y-t%E1%BB%9D-xin-visa-nh%E1%BA%ADt-390x205.png" width="130" alt=""/>
-                                <div className="item-post--detail">
-                                    <div className="title">
-                                        <h3>Hướng dẫn chuẩn bị giấy tờ xin Visa Nhật Bản tự túc mới nhất</h3>
-                                        <span className="title-post datetime"><i className="icon-calendar"></i> <span>September 18, 2016</span></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="item-post d-flex">
-                                <img src="https://billbalo.com/wp-content/uploads/2017/07/gi%E1%BA%A5y-t%E1%BB%9D-xin-visa-nh%E1%BA%ADt-390x205.png" width="130" alt=""/>
-                                <div className="item-post--detail">
-                                    <div className="title">
-                                        <h3>Hướng dẫn chuẩn bị giấy tờ xin Visa Nhật Bản tự túc mới nhất</h3>
-                                        <span className="title-post datetime"><i className="icon-calendar"></i> <span>September 18, 2016</span></span>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            )))}
                         </ul>
                     </div>
                 </div>

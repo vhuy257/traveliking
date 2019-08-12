@@ -793,14 +793,19 @@ ul, li {
   padding: 10px;
 }
 .list-item .item-post {
-  margin: 20px 0 0;
+  margin: 0;
   box-shadow: 1px 1px 1pc #ccc;
   width: calc(100%/3 - 10px);
 }
 .list-item .item-post h3 {
   margin-bottom: 0;
-  margin-top: 0;
   font-size: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 40px;
+  margin-top: 10px;
 }
 .list-item .item-post img {
   margin-right: 5px;
@@ -943,7 +948,7 @@ a {
   padding: 0 0 0 10px;
 }
 .review-all .list-item .item-post img {
-  width: 130px;
+  min-width: 130px;
 }
 .review-all .list-item .item-post h3 {
   font-size: 14px;
@@ -974,6 +979,7 @@ a {
 .list-item.grid .item-post {
   width: calc(100%/2 - 10px);
   position: relative;
+  max-height: 217px;
 }
 .list-item.grid .item-post .datetime,
 .list-item.grid .item-post .description,

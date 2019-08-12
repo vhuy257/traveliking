@@ -26,7 +26,6 @@ class HomePage extends Component {
     }
 }
 
-
 const mapStateToProps = state => ({
     itemPerPage: state.paging.itemPerPage,
     pageCurrent: state.paging.pageCurrent,
