@@ -6,7 +6,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 class ReviewAll extends Component {
     render() {
         return (
-            <div className="header-category review-all">
+            <div className={`header-category review-all ${this.props.layoutClass || 'default'}`}>
                     <div className="title-category">
                         <span>{this.props.title}</span>
                         <button className="view-all">
@@ -16,8 +16,9 @@ class ReviewAll extends Component {
                     <div className="list-item">
                         <ul>
                             {this.props.data.map(((item, key) => (
-                                <li className="item-post d-flex" key={key}>
+                                <li className="item-post" key={key}>
                                     <Link 
+                                    className="d-flex"
                                     to={{
                                         pathname: `/post/${item.slug}`,
                                         state: {

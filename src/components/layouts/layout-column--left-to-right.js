@@ -83,7 +83,7 @@ class LayoutLeftToRight extends Component {
                     <ReviewAll title="Review" data={this.state.Review}/>
                     <BannerQC src="https://billbalo.com/wp-content/uploads/2019/04/BANNER-QC_SANVE99K_600x500.jpg"/>
                     <BannerQC src="https://s.adroll.com/a/4HE/URC/4HEURCJCCZGLLCQ27HHHPZ.jpg"/>
-                    <ReviewAll layout="am-thuc" title="Ẩm Thực" data={this.state.AmThuc}/>
+                    <ReviewAll layout="am-thuc" title="Ẩm Thực" data={this.state.AmThuc} layoutClass='am--thuc'/>
                 </div>
             </section>
         )

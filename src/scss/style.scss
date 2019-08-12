@@ -172,6 +172,14 @@ a {
 
 .review-all {
   margin-top: 30px;
+  &.am--thuc {
+    .title-category {
+      > span,
+      &:after {
+        background: #2c9dcc;
+      }
+    }
+  }
   .title-category {
     > span,
     &:after {
@@ -186,6 +194,7 @@ a {
     flex-wrap: nowrap;
     .item-post--detail {
       padding: 0 0 0 10px;
+      width: calc(100% - 150px);
     }
     img {
       min-width: 130px;
@@ -194,6 +203,7 @@ a {
       font-size: 14px;
       font-weight: normal;
       height: 40px;
+      margin-top: 0;
     }
   }
 }

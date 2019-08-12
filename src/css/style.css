@@ -934,6 +934,9 @@ a {
 .review-all {
   margin-top: 30px;
 }
+.review-all.am--thuc .title-category > span, .review-all.am--thuc .title-category:after {
+  background: #2c9dcc;
+}
 .review-all .title-category > span, .review-all .title-category:after {
   background: #006b1e;
 }
@@ -946,6 +949,7 @@ a {
 }
 .review-all .list-item .item-post .item-post--detail {
   padding: 0 0 0 10px;
+  width: calc(100% - 150px);
 }
 .review-all .list-item .item-post img {
   min-width: 130px;
@@ -954,6 +958,7 @@ a {
   font-size: 14px;
   font-weight: normal;
   height: 40px;
+  margin-top: 0;
 }
 
 .list-item.ticker ul {
