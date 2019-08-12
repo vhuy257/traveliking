@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {formatDate} from '../../formatDate';
+import {Link} from "react-router-dom";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 class ReviewAll extends Component {
@@ -16,17 +17,25 @@ class ReviewAll extends Component {
                         <ul>
                             {this.props.data.map(((item, key) => (
                                 <li className="item-post d-flex" key={key}>
-                                    <LazyLoadImage 
-                                    effect="blur"
-                                    src={item.image} 
-                                    width="130" 
-                                    alt={item.title}/>
-                                    <div className="item-post--detail">
-                                        <div className="title">
-                                            <h3>{item.title}</h3>
-                                            <span className="title-post datetime"><i className="icon-calendar"></i> <span>{formatDate(item.createdAt)}</span></span>
+                                    <Link 
+                                    to={{
+                                        pathname: `/post/${item.slug}`,
+                                        state: {
+                                        _id: item._id
+                                        }
+                                    }}>
+                                        <LazyLoadImage 
+                                        effect="blur"
+                                        src={item.image} 
+                                        width="130" 
+                                        alt={item.title}/>
+                                        <div className="item-post--detail">
+                                            <div className="title">
+                                                <h3>{item.title}</h3>
+                                                <span className="title-post datetime"><i className="icon-calendar"></i> <span>{formatDate(item.createdAt)}</span></span>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </li>
                             )))}
                         </ul>
