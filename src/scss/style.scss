@@ -225,7 +225,13 @@ a {
     }
   }
 }
-
+.date {
+  font-size: 14px;
+  color: grey;
+  i {
+    margin-right: 5px;
+  }
+}
 .header-category {
   margin-bottom: 40px;
 }

@@ -6,6 +6,7 @@ import ReviewAll from '../../components/index/review-all';
 import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import axios from 'axios';
+import {formatDate} from '../../formatDate';
 import {
     getData
 } from '../../redux/actions/apiActions';
@@ -63,6 +64,7 @@ class PostDetail extends Component {
                 <div className="left-column">
                     <img src={this.props.topic.topicImage} alt={this.props.topic.titleTopic} />
                     <h2>{this.props.topic.titleTopic}</h2>
+                    <div className="date"><i className="icon-calendar"></i>{formatDate(this.props.topic.createdAt)}</div>
                     <div className="content--post" dangerouslySetInnerHTML={{__html: draftToHtml(convertToRaw(this.props.topic.contentTopic.getCurrentContent()))}}></div>
                 </div>
                 <div className="right-column">

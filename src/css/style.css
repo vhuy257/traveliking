@@ -979,6 +979,14 @@ a {
   height: 40px;
 }
 
+.date {
+  font-size: 14px;
+  color: grey;
+}
+.date i {
+  margin-right: 5px;
+}
+
 .header-category {
   margin-bottom: 40px;
 }
