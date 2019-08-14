@@ -29,6 +29,12 @@ const initialState = {
   searchText: '',
   imageEditorLink: '',
   listTopic: [],
+  listTopicThaiLan: [],
+  listTopicNhatBan: [],
+  listTopicHanQuoc: [],
+  listTopicTrungQuoc: [],
+  listTopicReview: [],
+  listTopicAmThuc: [],
   toggleList: true,
   pagesLength: '',
   tags: {
@@ -61,7 +67,13 @@ export default function TopicReducer (
     case GET_LIST_TOPIC_SUCCESS:
       return {
         ...state,
-        listTopic: convertContentListTopic(action.payload.data.data.data),
+        listTopic: convertContentListTopic(action.payload.data.data.data.dataAll),
+        listTopicHanQuoc: convertContentListTopic(action.payload.data.data.data.dataHanQuoc),
+        listTopicNhatBan: convertContentListTopic(action.payload.data.data.data.dataNhatBan),
+        listTopicThaiLan: convertContentListTopic(action.payload.data.data.data.dataThaiLan),
+        listTopicTrungQuoc: convertContentListTopic(action.payload.data.data.data.dataTrungQuoc),
+        listTopicReview: convertContentListTopic(action.payload.data.data.data.dataReview),
+        listTopicAmThuc:  convertContentListTopic(action.payload.data.data.data.dataAmThuc),
         pagesLength: action.payload.data.data.pages
       };
     case FETCH_TOPIC_CONTENT_SUCCESS:

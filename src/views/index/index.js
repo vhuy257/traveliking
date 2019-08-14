@@ -13,7 +13,7 @@ import WithLoading from '../../loading';
 
 const HightLightWithLoading = WithLoading(HightLight);
 const LayoutWithLoading = WithLoading(LayoutLeftToRight);
-const apiURL = `${ROUTES.API_BASE_URL}api/post/listposts/20`;
+const apiURL = `${ROUTES.API_BASE_URL}api/post/index`;
 
 class HomePage extends Component {
     componentDidMount() {
