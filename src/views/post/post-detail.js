@@ -11,7 +11,6 @@ import {
     getData
 } from '../../redux/actions/apiActions';
 import {
-    resetContent,
     fetchTopicSuccess
 } from '../../redux/actions/topicActions';
 import WithLoading from '../../loading';
@@ -66,22 +65,25 @@ class PostDetail extends Component {
     }
 
     componentDidMount() {
-        const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.location.state._id}`;
-        this.props.dispatch(resetContent());
+        console.log('mounted');
+        const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.location.state._id}`;        
+        document.title = this.props.topic.titleTopic;
         this.props.dispatch(getData(urlFetch, fetchTopicSuccess));
         this.getDataByTag('Review');
         this.getDataByTag('Ẩm Thực');
     }
-    
+
     componentWillReceiveProps(nextProps) {
-        if (this.props.topic !== nextProps.topic) {
-            document.title = nextProps.topic.titleTopic;
+        if(nextProps.topic !== this.props.topic) {
+            const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.location.state._id}`;        
+            document.title = this.props.topic.titleTopic;
+            this.props.dispatch(getData(urlFetch, fetchTopicSuccess));
         }
     }
 
     render() {        
         return (
-            <section className="rows layout-2column-left container">
+            <section className="rows layout-2column-left container post-detail">
                 <div className="left-column">
                     <HtmlWithLoading isLoading={this.props.loading} topic={this.props.topic}/>
                 </div>

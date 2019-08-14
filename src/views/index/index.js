@@ -12,7 +12,9 @@ import {
 import WithLoading from '../../loading';
 
 const HightLightWithLoading = WithLoading(HightLight);
+const LayoutWithLoading = WithLoading(LayoutLeftToRight);
 const apiURL = `${ROUTES.API_BASE_URL}api/post/listposts/20`;
+
 class HomePage extends Component {
     componentDidMount() {
         this.props.dispatch(getData(apiURL, getListTopicSuccess));
@@ -21,8 +23,8 @@ class HomePage extends Component {
     render() {
         return (
             <>
-                <HightLightWithLoading isLoading= {this.props.loading} topic={this.props.topic}/>
-                <LayoutLeftToRight topic={this.props.topic}/>
+                <HightLightWithLoading isLoading={this.props.loading} topic={this.props.topic}/>
+                <LayoutWithLoading isLoading={this.props.loading} topic={this.props.topic}/>
             </>
         )
     }
