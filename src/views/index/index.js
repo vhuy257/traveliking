@@ -9,7 +9,9 @@ import {
 import {
   getListTopicSuccess
 } from '../../redux/actions/topicActions';
+import WithLoading from '../../loading';
 
+const HightLightWithLoading = WithLoading(HightLight);
 const apiURL = `${ROUTES.API_BASE_URL}api/post/listposts/20`;
 class HomePage extends Component {
     componentDidMount() {
@@ -19,7 +21,7 @@ class HomePage extends Component {
     render() {
         return (
             <>
-                <HightLight topic={this.props.topic}/>
+                <HightLightWithLoading isLoading= {this.props.loading} topic={this.props.topic}/>
                 <LayoutLeftToRight topic={this.props.topic}/>
             </>
         )

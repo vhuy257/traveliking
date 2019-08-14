@@ -14,8 +14,28 @@ import {
     resetContent,
     fetchTopicSuccess
 } from '../../redux/actions/topicActions';
+import WithLoading from '../../loading';
 
 const apiURL = `${ROUTES.API_BASE_URL}api/post/tag/`
+
+const HtmlBinding = (props) => {
+    return (
+        <>
+            <img src={props.topic.topicImage} alt={props.topic.titleTopic} />
+            <h2>{props.topic.titleTopic}</h2>
+            {
+                props.topic.createdAt && 
+                (
+                    <div className="date"><i className="icon-calendar"></i>{formatDate(props.topic.createdAt)}</div>
+                )
+            }
+            <div className="content--post" dangerouslySetInnerHTML={{__html: draftToHtml(convertToRaw(props.topic.contentTopic.getCurrentContent()))}}></div>
+        </>
+    )
+}
+
+const HtmlWithLoading = WithLoading(HtmlBinding);
+
 class PostDetail extends Component {
     constructor(props) {
         super(props);
@@ -24,6 +44,7 @@ class PostDetail extends Component {
             Review: [],
         }
     }
+
     getDataByTag(tagname) {
         axios.get(`${apiURL}${tagname}`)
             .then(data => {                
@@ -62,10 +83,7 @@ class PostDetail extends Component {
         return (
             <section className="rows layout-2column-left container">
                 <div className="left-column">
-                    <img src={this.props.topic.topicImage} alt={this.props.topic.titleTopic} />
-                    <h2>{this.props.topic.titleTopic}</h2>
-                    <div className="date"><i className="icon-calendar"></i>{formatDate(this.props.topic.createdAt)}</div>
-                    <div className="content--post" dangerouslySetInnerHTML={{__html: draftToHtml(convertToRaw(this.props.topic.contentTopic.getCurrentContent()))}}></div>
+                    <HtmlWithLoading isLoading={this.props.loading} topic={this.props.topic}/>
                 </div>
                 <div className="right-column">
                     <BannerQC src="https://billbalo.com/wp-content/uploads/2017/07/Button-message.png"/>
