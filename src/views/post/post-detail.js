@@ -65,7 +65,6 @@ class PostDetail extends Component {
     }
 
     componentDidMount() {
-        console.log('mounted');
         const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.location.state._id}`;        
         document.title = this.props.topic.titleTopic;
         this.props.dispatch(getData(urlFetch, fetchTopicSuccess));
@@ -73,10 +72,10 @@ class PostDetail extends Component {
         this.getDataByTag('Ẩm Thực');
     }
 
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.topic !== this.props.topic) {
-            const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${this.props.location.state._id}`;        
-            document.title = this.props.topic.titleTopic;
+    componentWillReceiveProps(nextProps) {        
+        if(this.props.location.state._id !== nextProps.location.state._id) {
+            const urlFetch = `${ROUTES.API_BASE_URL}api/post/id/${nextProps.location.state._id}`;        
+            document.title = nextProps.topic.titleTopic;
             this.props.dispatch(getData(urlFetch, fetchTopicSuccess));
         }
     }
