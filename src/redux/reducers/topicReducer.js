@@ -43,15 +43,6 @@ const initialState = {
   }
 }
 
-function convertContentListTopic(listTopic) {
-    let tempt = [];
-    listTopic.map((item) => {
-      item.content = convertFromHtmlToDraft(item.content);
-      return tempt.push(item);
-    });
-    return tempt;
-}
-
 export default function TopicReducer (
   state = initialState,
   action
@@ -67,13 +58,13 @@ export default function TopicReducer (
     case GET_LIST_TOPIC_SUCCESS:
       return {
         ...state,
-        listTopic: convertContentListTopic(action.payload.data.data.data.dataAll),
-        listTopicHanQuoc: convertContentListTopic(action.payload.data.data.data.dataHanQuoc),
-        listTopicNhatBan: convertContentListTopic(action.payload.data.data.data.dataNhatBan),
-        listTopicThaiLan: convertContentListTopic(action.payload.data.data.data.dataThaiLan),
-        listTopicTrungQuoc: convertContentListTopic(action.payload.data.data.data.dataTrungQuoc),
-        listTopicReview: convertContentListTopic(action.payload.data.data.data.dataReview),
-        listTopicAmThuc:  convertContentListTopic(action.payload.data.data.data.dataAmThuc),
+        listTopic: action.payload.data.data.data.dataAll,
+        listTopicHanQuoc: action.payload.data.data.data.dataHanQuoc,
+        listTopicNhatBan: action.payload.data.data.data.dataNhatBan,
+        listTopicThaiLan: action.payload.data.data.data.dataThaiLan,
+        listTopicTrungQuoc: action.payload.data.data.data.dataTrungQuoc,
+        listTopicReview: action.payload.data.data.data.dataReview,
+        listTopicAmThuc:  action.payload.data.data.data.dataAmThuc,
         pagesLength: action.payload.data.data.pages
       };
     case FETCH_TOPIC_CONTENT_SUCCESS:

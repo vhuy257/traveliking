@@ -100,7 +100,7 @@ class PostDetail extends Component {
 }
 
 const mapStatetoProps = state => ({
-    topic: state.topic,
+    topic: state.topic, 
     loading: state.api.isLoading
 });
 
